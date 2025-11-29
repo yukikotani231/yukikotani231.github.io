@@ -80,17 +80,10 @@ export default function Home() {
               <div className="prose dark:prose-invert mx-auto mb-20">
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-lg">
                   <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
-                    東京大学機械工学科出身のフルスタックエンジニア。
-                    建設業界向けSaaSの開発・運用において、テックリードとして技術的意思決定を主導。
+                    大学時代にOLIENT TECH株式会社、燈株式会社にてエンジニアのインターンを経験。OLINET TECH株式会社では運送業事業者向けの請求書作成アプリケーションの開発プロジェクトにバックエンドエンジニアとして参加し、その後SaaS化プロジェクトの立ち上げにも関与。燈株式会社ではDXソリューション事業部において図面データの構造化手法の研究開発業務に従事し、複数大手企業とのPoC案件にも参加。図面データ特化の機械学習モデルの提案や物体検出手法の開発を行なった。
                   </p>
                   <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
-                    インターン時代から複雑なアルゴリズム開発や大規模システムの設計・実装を経験し、
-                    正社員として現在はチーム全体の技術的健全性の維持とプロダクト実現を担当。
-                  </p>
-                  <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-                    フロントエンド（React, TypeScript）、バックエンド（Node.js, GraphQL, PostgreSQL）、
-                    インフラ（AWS, Kubernetes）まで幅広い技術スタックに精通し、
-                    要件定義から実装、運用まで一貫した開発経験を有します。
+                    2024年にAI SaaS事業部に異動し、建設業界向けの管理業務効率化SaaSの開発・運用にフルスタックエンジニアとして参加。新機能開発や不具合調査修正に加え、ドキュメント整備・CI/CDの効率化による開発生産性向上や監視ツールの導入によるサービスの安定性可視化などを行った。現在はテックリード的立場として、複数プロダクト全体の技術的な方向性の決定も兼任している。
                   </p>
                 </div>
               </div>
