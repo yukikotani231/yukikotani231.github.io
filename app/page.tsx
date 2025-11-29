@@ -3,6 +3,7 @@ import Navigation from "./components/Navigation";
 import FadeIn from "./components/FadeIn";
 import MouseFollower from "./components/MouseFollower";
 import TiltCard from "./components/TiltCard";
+import TypeWriter from "./components/TypeWriter";
 
 export default function Home() {
   return (
@@ -29,8 +30,18 @@ export default function Home() {
               </h1>
             </FadeIn>
             <FadeIn delay={0.4}>
-              <p className="text-2xl md:text-3xl text-slate-700 dark:text-slate-300 mb-4 font-light">
-                Fullstack Engineer / Tech Lead
+              <p className="text-2xl md:text-3xl text-slate-700 dark:text-slate-300 mb-4 font-light min-h-[2.5rem]">
+                <TypeWriter
+                  texts={[
+                    "Fullstack Engineer",
+                    "Tech Lead",
+                    "Problem Solver",
+                    "SaaS Developer",
+                  ]}
+                  typingSpeed={80}
+                  deletingSpeed={40}
+                  pauseDuration={2500}
+                />
               </p>
               <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-12 font-light">
                 エンタープライズSaaSの複雑な技術課題を解決するテックリード。<br />
@@ -237,11 +248,22 @@ export default function Home() {
                         href={`/works/${project.id}`}
                         className="group block h-full"
                       >
-                        <div className="h-full min-h-[400px] flex flex-col p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl hover:shadow-2xl hover:scale-[1.02] hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-500 relative overflow-hidden">
+                        <div className="h-full min-h-[400px] flex flex-col p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl hover:shadow-2xl hover:shadow-blue-500/20 hover:scale-[1.02] hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-500 relative overflow-hidden group-hover:bg-white/80 dark:group-hover:bg-slate-800/80">
                         {/* Gradient overlay on hover */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-blue-500/0 group-hover:from-blue-500/5 group-hover:to-blue-500/5 transition-all duration-500 rounded-3xl"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-all duration-500 rounded-3xl"></div>
+
+                        {/* Animated glow effect */}
+                        <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
 
                         <div className="relative z-10 flex flex-col h-full">
+                          {/* Screenshot placeholder with gradient */}
+                          <div className="w-full h-48 mb-6 rounded-2xl bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 flex items-center justify-center border border-blue-200/30 dark:border-blue-700/30 overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                            <div className="text-center p-4">
+                              <div className="text-4xl mb-2">🚀</div>
+                              <p className="text-sm text-slate-600 dark:text-slate-400">Enterprise SaaS Platform</p>
+                            </div>
+                          </div>
+
                           <div className="flex-1">
                             <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                               {project.title}
@@ -297,11 +319,22 @@ export default function Home() {
                         href={`/works/${project.id}`}
                         className="group block h-full"
                       >
-                        <div className="h-full min-h-[400px] flex flex-col p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl hover:shadow-2xl hover:scale-[1.02] hover:border-purple-300 dark:hover:border-purple-700 transition-all duration-500 relative overflow-hidden">
+                        <div className="h-full min-h-[400px] flex flex-col p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.02] hover:border-purple-400 dark:hover:border-purple-500 transition-all duration-500 relative overflow-hidden group-hover:bg-white/80 dark:group-hover:bg-slate-800/80">
                         {/* Gradient overlay on hover */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-purple-500/0 group-hover:from-purple-500/5 group-hover:to-purple-500/5 transition-all duration-500 rounded-3xl"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:to-pink-500/10 transition-all duration-500 rounded-3xl"></div>
+
+                        {/* Animated glow effect */}
+                        <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
 
                         <div className="relative z-10 flex flex-col h-full">
+                          {/* Icon placeholder */}
+                          <div className="w-full h-48 mb-6 rounded-2xl bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 flex items-center justify-center border border-purple-200/30 dark:border-purple-700/30 overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                            <div className="text-center p-4">
+                              <div className="text-4xl mb-2">{project.id === "project-6" ? "🔬" : "📊"}</div>
+                              <p className="text-sm text-slate-600 dark:text-slate-400">{project.id === "project-6" ? "Algorithm Research" : "Business Automation"}</p>
+                            </div>
+                          </div>
+
                           <div className="flex-1">
                             <h3 className="text-2xl font-bold mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                               {project.title}
@@ -364,11 +397,22 @@ export default function Home() {
                         href={`/works/${project.id}`}
                         className="group block h-full"
                       >
-                        <div className="h-full min-h-[400px] flex flex-col p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl hover:shadow-2xl hover:scale-[1.02] hover:border-emerald-300 dark:hover:border-emerald-700 transition-all duration-500 relative overflow-hidden">
+                        <div className="h-full min-h-[400px] flex flex-col p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl hover:shadow-2xl hover:shadow-emerald-500/20 hover:scale-[1.02] hover:border-emerald-400 dark:hover:border-emerald-500 transition-all duration-500 relative overflow-hidden group-hover:bg-white/80 dark:group-hover:bg-slate-800/80">
                         {/* Gradient overlay on hover */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-emerald-500/0 group-hover:from-emerald-500/5 group-hover:to-emerald-500/5 transition-all duration-500 rounded-3xl"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-teal-500/0 group-hover:from-emerald-500/10 group-hover:to-teal-500/10 transition-all duration-500 rounded-3xl"></div>
+
+                        {/* Animated glow effect */}
+                        <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
 
                         <div className="relative z-10 flex flex-col h-full">
+                          {/* Icon placeholder */}
+                          <div className="w-full h-48 mb-6 rounded-2xl bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/30 dark:to-teal-900/30 flex items-center justify-center border border-emerald-200/30 dark:border-emerald-700/30 overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                            <div className="text-center p-4">
+                              <div className="text-4xl mb-2">{project.id === "project-2" ? "👀" : project.id === "project-4" ? "🎨" : "💼"}</div>
+                              <p className="text-sm text-slate-600 dark:text-slate-400">{project.id === "project-2" ? "Code Review Tool" : project.id === "project-4" ? "AI-Powered SNS" : "This Portfolio"}</p>
+                            </div>
+                          </div>
+
                           <div className="flex-1">
                             <h3 className="text-2xl font-bold mb-3 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                               {project.title}
