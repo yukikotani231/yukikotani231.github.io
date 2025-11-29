@@ -253,19 +253,6 @@ export default function Home() {
                   ],
                 },
                 {
-                  period: "2023年4月 - 2023年9月 【個人開発】",
-                  title: "モバイルエンジニア",
-                  company: "個人開発",
-                  description:
-                    "AI機能を統合したモバイルアプリケーション開発。企画から実装、デプロイまでを単独で完遂。",
-                  highlights: [
-                    "モバイルアプリ開発（React Native / Expo）",
-                    "Firebase による認証・データベース構築",
-                    "外部API連携",
-                    "アプリストアへのリリース",
-                  ],
-                },
-                {
                   period: "2022年7月 - 2024年3月 【インターン】",
                   title: "アルゴリズムエンジニア/フルスタックエンジニア",
                   company: "燈株式会社",
