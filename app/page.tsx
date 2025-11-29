@@ -33,8 +33,8 @@ export default function Home() {
                 Fullstack Engineer / Tech Lead
               </p>
               <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-12 font-light">
-                開発生産性向上とチーム成長を実現するテックリード。<br />
-                複雑な技術課題の解決から組織づくりまで、プロダクト全体の成長を主導。
+                エンタープライズSaaSの複雑な技術課題を解決するテックリード。<br />
+                開発生産性向上と大規模改修を通じて、プロダクト全体の成長を主導。
               </p>
             </FadeIn>
             <FadeIn delay={0.6}>
@@ -85,7 +85,7 @@ export default function Home() {
               <div className="grid md:grid-cols-3 gap-6 mb-20">
                 {[
                   {
-                    period: "2024～",
+                    period: "2025～",
                     role: "正社員",
                     title: "ソフトウェアエンジニア",
                     company: "燈株式会社",
@@ -124,10 +124,7 @@ export default function Home() {
               <div className="prose dark:prose-invert mx-auto mb-20">
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-lg">
                   <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
-                    大学時代にOLIENT TECH株式会社、燈株式会社にてエンジニアのインターンを経験。OLIENT TECH では運送業事業者向けの請求書作成アプリケーション開発に従事。燈株式会社では図面データの構造化手法の研究開発業務に従事し、複数大手企業とのPoC案件に参加。
-                  </p>
-                  <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
-                    2024年に正社員として燈株式会社AI SaaS事業部に配置。建設業向けバーティカルSaaSの開発・運用に従事。新機能開発やCI/CD最適化（30分→6分に短縮）、チーム技術指導を担当。現在はテックリードとして複数プロダクト全体の技術的な方向性を統括。
+                    現在はエンタープライズ向けSaaSプロダクトの開発・運用を担当。CI/CD最適化（30分→6分に短縮）や複雑なアルゴリズム設計（閉包テーブル）、10万行規模の大規模改修といった難易度の高い課題に取り組み、プロダクト全体の成長を実現。
                   </p>
                   <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
                     <strong>得意領域：</strong>フルスタック開発（React/Next.js、Node.js/Express、GraphQL）、データベース設計、DevOps/インフラ、アルゴリズム開発、チーム技術リーダーシップ
@@ -412,11 +409,11 @@ export default function Home() {
             <div className="space-y-12">
               {[
                 {
-                  period: "2024年1月 - 現在 【正社員】",
+                  period: "2025年3月 - 現在 【正社員】",
                   title: "テックリード / フルスタックエンジニア",
                   company: "燈株式会社",
                   description:
-                    "建設業向けSaaS開発・運用。正社員7名＋インターン15名の20名超チームを技術統括。",
+                    "エンタープライズSaaS開発・運用。複数プロダクトの技術戦略と開発生産性を統括。",
                   highlights: [
                     "CI/CDパイプライン最適化: 30分→6分に短縮（80%削減）",
                     "複雑なアルゴリズム設計（閉包テーブル）で最高難易度機能を完遂",
@@ -429,12 +426,12 @@ export default function Home() {
                   title: "アルゴリズムエンジニア/フルスタックエンジニア",
                   company: "燈株式会社",
                   description:
-                    "建設業向けの技術開発に従事。アルゴリズム開発から各種システム構築まで、幅広い開発経験を積む。",
+                    "アルゴリズム研究開発とシステム構築。複雑な問題解決と幅広い技術実装を経験。",
                   highlights: [
                     "複雑なアルゴリズムの研究開発",
                     "ベクターデータ処理と幾何学的解析",
                     "バックエンドシステムの設計・実装",
-                    "業務効率化ツールの開発",
+                    "複数企業とのPoC案件に参画",
                   ],
                 },
                 {
