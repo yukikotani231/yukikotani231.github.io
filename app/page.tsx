@@ -170,81 +170,186 @@ export default function Home() {
                 Works
               </h2>
             </FadeIn>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  id: "project-1",
-                  title: "Portfolio Site",
-                  description:
-                    "Next.js + Tailwind CSS で作成したポートフォリオサイト",
-                  tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-                },
-                {
-                  id: "project-2",
-                  title: "RepoLens",
-                  description: "GitHub PR Review Tool - GitHub OAuthで認証し、プルリクエストを効率的にレビューするWebアプリケーション",
-                  tags: ["Next.js", "TypeScript", "Tailwind CSS", "NextAuth.js", "GitHub API"],
-                },
-                {
-                  id: "project-3",
-                  title: "建設業向けバーティカルSaaS",
-                  description: "建設業界向けの管理業務効率化SaaS - 複雑なフォーム制御やデータ構造設計を採用した大規模プロダクト",
-                  tags: ["React", "TypeScript", "Node.js", "GraphQL", "PostgreSQL", "AWS", "Kubernetes"],
-                },
-                {
-                  id: "project-4",
-                  title: "画像生成AI統合型SNSアプリケーション",
-                  description: "モバイルプラットフォーム向けに画像生成AI機能とSNS機能を統合したアプリケーション。企画、開発、リリースまでを単独で実行。",
-                  tags: ["React Native", "Expo", "Firebase", "Hugging Face API"],
-                },
-                {
-                  id: "project-6",
-                  title: "CADデータ解析・アルゴリズム研究開発",
-                  description: "ベクター形式のデータから意図した情報を自動で抽出・構造化するアルゴリズムの研究開発。複数企業とのPoC案件に参画。",
-                  tags: ["Python", "アルゴリズム", "グラフアルゴリズム", "パターン認識"],
-                },
-                {
-                  id: "project-5",
-                  title: "3PL事業者向け請求書作成補助アプリケーション",
-                  description: "3PL事業向けの月次請求書作成業務の自動化。手作業による煩雑な集計作業とヒューマンエラーを削減するシステム開発。",
-                  tags: ["Python", "Django", "PostgreSQL"],
-                },
-              ].map((project, index) => (
-                <FadeIn key={project.id} delay={0.1 + index * 0.1}>
-                  <TiltCard>
-                    <Link
-                      href={`/works/${project.id}`}
-                      className="group block h-full"
-                    >
-                      <div className="h-full min-h-[400px] flex flex-col p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl hover:shadow-2xl hover:scale-[1.02] hover:border-purple-300 dark:hover:border-purple-700 transition-all duration-500 relative overflow-hidden">
-                      {/* Gradient overlay on hover */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:to-purple-500/5 transition-all duration-500 rounded-3xl"></div>
 
-                      <div className="relative z-10 flex flex-col h-full">
-                        <div className="flex-1">
-                          <h3 className="text-2xl font-bold mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                            {project.title}
-                          </h3>
-                          <p className="text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3">
-                            {project.description}
-                          </p>
-                        </div>
-                        <div className="flex gap-2 flex-wrap mt-auto pt-6">
-                          {project.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-4 py-2 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/50 dark:to-purple-950/50 text-slate-700 dark:text-slate-300 text-sm rounded-full border border-slate-200/50 dark:border-slate-700/50"
-                            >
-                              {tag}
-                            </span>
-                          ))}
+            {/* Professional Projects */}
+            <div className="mb-20">
+              <FadeIn>
+                <h3 className="text-3xl font-bold mb-12 text-slate-900 dark:text-white border-l-4 border-blue-500 pl-4">
+                  📌 Professional Projects
+                </h3>
+              </FadeIn>
+              <div className="grid md:grid-cols-2 gap-8">
+                {[
+                  {
+                    id: "project-3",
+                    title: "建設業向けバーティカルSaaS",
+                    description: "建設業界向けの管理業務効率化SaaS - 複雑なフォーム制御やデータ構造設計を採用した大規模プロダクト",
+                    tags: ["React", "TypeScript", "Node.js", "GraphQL", "PostgreSQL", "AWS", "Kubernetes"],
+                  },
+                ].map((project, index) => (
+                  <FadeIn key={project.id} delay={0.1 + index * 0.1}>
+                    <TiltCard>
+                      <Link
+                        href={`/works/${project.id}`}
+                        className="group block h-full"
+                      >
+                        <div className="h-full min-h-[400px] flex flex-col p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl hover:shadow-2xl hover:scale-[1.02] hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-500 relative overflow-hidden">
+                        {/* Gradient overlay on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-blue-500/0 group-hover:from-blue-500/5 group-hover:to-blue-500/5 transition-all duration-500 rounded-3xl"></div>
+
+                        <div className="relative z-10 flex flex-col h-full">
+                          <div className="flex-1">
+                            <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                              {project.title}
+                            </h3>
+                            <p className="text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3">
+                              {project.description}
+                            </p>
+                          </div>
+                          <div className="flex gap-2 flex-wrap mt-auto pt-6">
+                            {project.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="px-4 py-2 bg-gradient-to-r from-blue-50 to-blue-50 dark:from-blue-950/50 dark:to-blue-950/50 text-blue-700 dark:text-blue-300 text-sm rounded-full border border-blue-200/50 dark:border-blue-700/50"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </Link>
-                </TiltCard>
-                </FadeIn>
-              ))}
+                    </Link>
+                  </TiltCard>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
+
+            {/* Internship & Research */}
+            <div className="mb-20">
+              <FadeIn>
+                <h3 className="text-3xl font-bold mb-12 text-slate-900 dark:text-white border-l-4 border-purple-500 pl-4">
+                  🎓 Internship & Research
+                </h3>
+              </FadeIn>
+              <div className="grid md:grid-cols-2 gap-8">
+                {[
+                  {
+                    id: "project-6",
+                    title: "CADデータ解析・アルゴリズム研究開発",
+                    description: "ベクター形式のデータから意図した情報を自動で抽出・構造化するアルゴリズムの研究開発。複数企業とのPoC案件に参画。",
+                    tags: ["Python", "アルゴリズム", "グラフアルゴリズム", "パターン認識"],
+                  },
+                  {
+                    id: "project-5",
+                    title: "3PL事業者向け請求書作成補助アプリケーション",
+                    description: "3PL事業向けの月次請求書作成業務の自動化。手作業による煩雑な集計作業とヒューマンエラーを削減するシステム開発。",
+                    tags: ["Python", "Django", "PostgreSQL"],
+                  },
+                ].map((project, index) => (
+                  <FadeIn key={project.id} delay={0.1 + index * 0.1}>
+                    <TiltCard>
+                      <Link
+                        href={`/works/${project.id}`}
+                        className="group block h-full"
+                      >
+                        <div className="h-full min-h-[400px] flex flex-col p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl hover:shadow-2xl hover:scale-[1.02] hover:border-purple-300 dark:hover:border-purple-700 transition-all duration-500 relative overflow-hidden">
+                        {/* Gradient overlay on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-purple-500/0 group-hover:from-purple-500/5 group-hover:to-purple-500/5 transition-all duration-500 rounded-3xl"></div>
+
+                        <div className="relative z-10 flex flex-col h-full">
+                          <div className="flex-1">
+                            <h3 className="text-2xl font-bold mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                              {project.title}
+                            </h3>
+                            <p className="text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3">
+                              {project.description}
+                            </p>
+                          </div>
+                          <div className="flex gap-2 flex-wrap mt-auto pt-6">
+                            {project.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="px-4 py-2 bg-gradient-to-r from-purple-50 to-purple-50 dark:from-purple-950/50 dark:to-purple-950/50 text-purple-700 dark:text-purple-300 text-sm rounded-full border border-purple-200/50 dark:border-purple-700/50"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </TiltCard>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
+
+            {/* Personal Projects & Tools */}
+            <div>
+              <FadeIn>
+                <h3 className="text-3xl font-bold mb-12 text-slate-900 dark:text-white border-l-4 border-emerald-500 pl-4">
+                  🛠️ Personal Projects & Tools
+                </h3>
+              </FadeIn>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[
+                  {
+                    id: "project-2",
+                    title: "RepoLens",
+                    description: "GitHub PR Review Tool - GitHub OAuthで認証し、プルリクエストを効率的にレビューするWebアプリケーション",
+                    tags: ["Next.js", "TypeScript", "Tailwind CSS", "NextAuth.js", "GitHub API"],
+                  },
+                  {
+                    id: "project-4",
+                    title: "画像生成AI統合型SNSアプリケーション",
+                    description: "モバイルプラットフォーム向けに画像生成AI機能とSNS機能を統合したアプリケーション。企画、開発、リリースまでを単独で実行。",
+                    tags: ["React Native", "Expo", "Firebase", "Hugging Face API"],
+                  },
+                  {
+                    id: "project-1",
+                    title: "Portfolio Site",
+                    description:
+                      "Next.js + Tailwind CSS で作成したポートフォリオサイト",
+                    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+                  },
+                ].map((project, index) => (
+                  <FadeIn key={project.id} delay={0.1 + index * 0.1}>
+                    <TiltCard>
+                      <Link
+                        href={`/works/${project.id}`}
+                        className="group block h-full"
+                      >
+                        <div className="h-full min-h-[400px] flex flex-col p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl hover:shadow-2xl hover:scale-[1.02] hover:border-emerald-300 dark:hover:border-emerald-700 transition-all duration-500 relative overflow-hidden">
+                        {/* Gradient overlay on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-emerald-500/0 group-hover:from-emerald-500/5 group-hover:to-emerald-500/5 transition-all duration-500 rounded-3xl"></div>
+
+                        <div className="relative z-10 flex flex-col h-full">
+                          <div className="flex-1">
+                            <h3 className="text-2xl font-bold mb-3 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                              {project.title}
+                            </h3>
+                            <p className="text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3">
+                              {project.description}
+                            </p>
+                          </div>
+                          <div className="flex gap-2 flex-wrap mt-auto pt-6">
+                            {project.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="px-4 py-2 bg-gradient-to-r from-emerald-50 to-emerald-50 dark:from-emerald-950/50 dark:to-emerald-950/50 text-emerald-700 dark:text-emerald-300 text-sm rounded-full border border-emerald-200/50 dark:border-emerald-700/50"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </TiltCard>
+                  </FadeIn>
+                ))}
+              </div>
             </div>
           </div>
         </section>
