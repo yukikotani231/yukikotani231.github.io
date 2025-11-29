@@ -1,10 +1,13 @@
 import Link from "next/link";
 import Navigation from "./components/Navigation";
 import FadeIn from "./components/FadeIn";
+import MouseFollower from "./components/MouseFollower";
+import TiltCard from "./components/TiltCard";
 
 export default function Home() {
   return (
     <>
+      <MouseFollower />
       <Navigation />
       <main className="min-h-screen">
         {/* Hero Section */}
@@ -148,11 +151,12 @@ export default function Home() {
                 },
               ].map((project, index) => (
                 <FadeIn key={project.id} delay={0.1 + index * 0.1}>
-                  <Link
-                    href={`/works/${project.id}`}
-                    className="group block h-full"
-                  >
-                    <div className="h-full p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl hover:shadow-2xl hover:scale-[1.02] hover:border-purple-300 dark:hover:border-purple-700 transition-all duration-500 relative overflow-hidden">
+                  <TiltCard>
+                    <Link
+                      href={`/works/${project.id}`}
+                      className="group block h-full"
+                    >
+                      <div className="h-full p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl hover:shadow-2xl hover:scale-[1.02] hover:border-purple-300 dark:hover:border-purple-700 transition-all duration-500 relative overflow-hidden">
                       {/* Gradient overlay on hover */}
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:to-purple-500/5 transition-all duration-500 rounded-3xl"></div>
 
@@ -176,6 +180,7 @@ export default function Home() {
                       </div>
                     </div>
                   </Link>
+                </TiltCard>
                 </FadeIn>
               ))}
             </div>
