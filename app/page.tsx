@@ -198,6 +198,12 @@ export default function Home() {
                   tags: ["React Native", "Expo", "Firebase", "Hugging Face API"],
                 },
                 {
+                  id: "project-6",
+                  title: "CADデータ解析・アルゴリズム研究開発",
+                  description: "ベクター形式のデータから意図した情報を自動で抽出・構造化するアルゴリズムの研究開発。複数企業とのPoC案件に参画。",
+                  tags: ["Python", "アルゴリズム", "グラフアルゴリズム", "パターン認識"],
+                },
+                {
                   id: "project-5",
                   title: "3PL事業者向け請求書作成補助アプリケーション",
                   description: "3PL事業向けの月次請求書作成業務の自動化。手作業による煩雑な集計作業とヒューマンエラーを削減するシステム開発。",
