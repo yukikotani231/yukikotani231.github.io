@@ -261,7 +261,7 @@ export default function Home() {
                 },
                 {
                   period: "2023年4月 - 2023年9月 【個人開発】",
-                  title: "フルスタックエンジニア",
+                  title: "モバイルエンジニア",
                   company: "個人開発",
                   description:
                     "AI機能を統合したモバイルアプリケーション開発。企画から実装、デプロイまでを単独で完遂。",
