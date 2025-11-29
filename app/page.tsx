@@ -33,7 +33,8 @@ export default function Home() {
                 Fullstack Engineer / Tech Lead
               </p>
               <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-12 font-light">
-                建設業向けSaaS開発のテックリード。フロント・バック・インフラまで幅広く。
+                開発生産性向上とチーム成長を実現するテックリード。<br />
+                複雑な技術課題の解決から組織づくりまで、プロダクト全体の成長を主導。
               </p>
             </FadeIn>
             <FadeIn delay={0.6}>
@@ -84,28 +85,32 @@ export default function Home() {
               <div className="grid md:grid-cols-3 gap-6 mb-20">
                 {[
                   {
-                    period: "2022-2024",
-                    title: "インターン",
+                    period: "2024～",
+                    role: "正社員",
+                    title: "ソフトウェアエンジニア",
                     company: "燈株式会社",
-                    desc: "アルゴリズム研究開発と技術実装",
+                    desc: "SaaS基盤の開発・最適化とアーキテクチャ設計",
+                  },
+                  {
+                    period: "2022-2024",
+                    role: "インターン",
+                    title: "アルゴリズムエンジニア",
+                    company: "燈株式会社",
+                    desc: "図面データ構造化技術の研究開発",
                   },
                   {
                     period: "2022-2023",
-                    title: "インターン",
+                    role: "インターン",
+                    title: "バックエンドエンジニア",
                     company: "OLIENT TECH",
-                    desc: "バックエンド開発（請求書自動化）",
-                  },
-                  {
-                    period: "2024～",
-                    title: "テックリード",
-                    company: "燈株式会社",
-                    desc: "20名超チーム統括・技術指導",
+                    desc: "請求書自動化システムの開発",
                   },
                 ].map((item, index) => (
                   <FadeIn key={item.period} delay={0.3 + index * 0.1}>
                     <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-750 rounded-2xl p-6 text-center border border-slate-200 dark:border-slate-700">
                       <div className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-2">{item.period}</div>
                       <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-1">{item.title}</h4>
+                      <p className="text-xs text-slate-500 dark:text-slate-500 mb-2">{item.role}</p>
                       <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">{item.company}</p>
                       <p className="text-sm text-slate-700 dark:text-slate-300">{item.desc}</p>
                     </div>
