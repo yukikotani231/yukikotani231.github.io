@@ -191,6 +191,12 @@ export default function Home() {
                   description: "建設業界向けの管理業務効率化SaaS - 複雑なフォーム制御やデータ構造設計を採用した大規模プロダクト",
                   tags: ["React", "TypeScript", "Node.js", "GraphQL", "PostgreSQL", "AWS", "Kubernetes"],
                 },
+                {
+                  id: "project-4",
+                  title: "画像生成AI統合型SNSアプリケーション",
+                  description: "モバイルプラットフォーム向けに画像生成AI機能とSNS機能を統合したアプリケーション。企画、開発、リリースまでを単独で実行。",
+                  tags: ["React Native", "Expo", "Firebase", "Hugging Face API"],
+                },
               ].map((project, index) => (
                 <FadeIn key={project.id} delay={0.1 + index * 0.1}>
                   <TiltCard>

@@ -89,6 +89,43 @@ const projects = {
     demo: undefined,
     date: "2024年1月〜現在",
   },
+  "project-4": {
+    title: "画像生成AI統合型SNSアプリケーション",
+    description: "モバイルプラットフォーム向けに画像生成AI機能とSNS機能を統合したアプリケーション。企画、開発、リリースまでを単独で実行。",
+    longDescription: `
+      共同企画に基づき、モバイルプラットフォーム向けに画像生成AI機能とSNS機能を統合したアプリケーションを、企画、開発、リリースまで単独で実行したプロジェクト。
+
+      主な実績：
+
+      1. モバイルアプリケーション開発の迅速な習得と実現
+      - プロジェクト開始時点でモバイル開発経験が不足していた状況から、React Native/Expoを採用
+      - 既存のWeb開発知識を応用することで、短期間でモバイルアプリケーション開発手法を習得
+      - 画面遷移、状態管理、コンポーネント設計の基本構造を確立
+      - ユーザーが円滑に利用できるプロダクトを短期間で実現
+
+      2. クラウドインフラストラクチャの設計とAI連携
+      - Firebase を採用し、認証（Authentication）とデータベース（Firestore）を一元化
+      - Firestore における投稿データのリアルタイム同期を実装
+      - SNS に必要となるデータ構造（コレクション/ドキュメント）を適切に設計
+      - ユーザーの入力プロンプトに基づき画像を生成するため、Hugging Face API と連携
+
+      3. プロダクト全体の統括管理
+      - 企画立案から実装、そしてアプリケーションストアへのリリースまでを一貫して単独で完遂
+      - プロジェクトの工数管理、およびモバイル特有の技術的課題（ビルドプロセス、API連携）をすべて自己解決
+      - プロダクト開発に対する高い熱意と、開発の全工程を俯瞰できる総合的な実行能力を実証
+
+      期間：2023年4月〜2023年9月
+
+      技術スタック：
+      - モバイルアプリケーション：React Native, Expo
+      - バックエンド/インフラストラクチャ：Firebase (Authentication, Firestore Database)
+      - AI連携：Hugging Face API
+    `,
+    tags: ["React Native", "Expo", "Firebase", "Hugging Face API"],
+    github: undefined,
+    demo: undefined,
+    date: "2023年4月〜2023年9月",
+  },
 };
 
 type ProjectSlug = keyof typeof projects;
