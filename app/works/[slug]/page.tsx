@@ -4,44 +4,50 @@ import { notFound } from "next/navigation";
 // プロジェクトデータ（後で外部ファイルに移動可能）
 const projects = {
   "project-1": {
-    title: "Project 1",
-    description: "プロジェクトの詳細な説明をここに書きます。",
+    title: "Portfolio Site",
+    description: "Next.js + Tailwind CSS + shadcn/ui で作成したポートフォリオサイト",
     longDescription: `
-      このプロジェクトでは、〇〇という課題を解決するために△△という技術を使用しました。
+      このポートフォリオサイトは、Create React AppからNext.jsへの移行プロジェクトとして作成しました。
 
-      主な機能：
-      - 機能1の説明
-      - 機能2の説明
-      - 機能3の説明
+      主な特徴：
+      - Next.js 15 の静的エクスポート機能を使用
+      - Tailwind CSS + shadcn/ui によるモダンなデザイン
+      - レスポンシブ対応
+      - GitHub Pages でホスティング
 
-      技術的な挑戦や学んだことなどを詳しく記載できます。
+      技術的なポイント：
+      - App Router を使用した最新のNext.js構成
+      - 動的ルーティングでプロジェクト詳細ページを実装
+      - Tailwind CSSのカスタムテーマ設定
     `,
-    tags: ["React", "TypeScript", "Node.js"],
-    github: "https://github.com/yourusername/project-1",
-    demo: "https://project-1-demo.com",
-    date: "2024年1月",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"],
+    github: "https://github.com/yukikotani231/yukikotani231.github.io",
+    demo: "https://yukikotani231.github.io/",
+    date: "2025年11月",
   },
   "project-2": {
-    title: "Project 2",
-    description: "プロジェクトの詳細な説明をここに書きます。",
+    title: "Coming Soon",
+    description: "プロジェクト情報を準備中です",
     longDescription: `
-      このプロジェクトの詳細な説明をここに書きます。
+      このプロジェクトの詳細は現在準備中です。
+      後日追加予定です。
     `,
-    tags: ["Next.js", "Tailwind CSS", "Vercel"],
-    github: "https://github.com/yourusername/project-2",
-    demo: "https://project-2-demo.com",
-    date: "2024年3月",
+    tags: ["準備中"],
+    github: undefined,
+    demo: undefined,
+    date: "準備中",
   },
   "project-3": {
-    title: "Project 3",
-    description: "プロジェクトの詳細な説明をここに書きます。",
+    title: "Coming Soon",
+    description: "プロジェクト情報を準備中です",
     longDescription: `
-      このプロジェクトの詳細な説明をここに書きます。
+      このプロジェクトの詳細は現在準備中です。
+      後日追加予定です。
     `,
-    tags: ["Node.js", "Express", "API"],
-    github: "https://github.com/yourusername/project-3",
+    tags: ["準備中"],
+    github: undefined,
     demo: undefined,
-    date: "2024年5月",
+    date: "準備中",
   },
 };
 

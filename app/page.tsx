@@ -7,10 +7,10 @@ export default function Home() {
       <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Your Name
+            Yuki Kotani
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-            Software Engineer | Web Developer
+            Software Engineer
           </p>
           <div className="flex gap-4 justify-center">
             <a
@@ -35,19 +35,23 @@ export default function Home() {
           <h2 className="text-4xl font-bold mb-8 text-center">About Me</h2>
           <div className="prose dark:prose-invert mx-auto">
             <p className="text-lg text-muted-foreground">
-              ここに自己紹介を書きます。あなたの経験、スキル、興味などを記載してください。
+              ソフトウェアエンジニアとして活動しています。
+              詳細な経歴やスキルについては、以下のセクションをご覧ください。
             </p>
           </div>
 
           <div className="mt-12">
             <h3 className="text-2xl font-bold mb-6">Skills</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {["React", "TypeScript", "Next.js", "Node.js", "Python", "Docker", "Git", "AWS"].map((skill) => (
+              {["React", "TypeScript", "Next.js", "Node.js", "Python", "Go", "Docker", "AWS"].map((skill) => (
                 <div key={skill} className="p-4 border border-border rounded-lg text-center hover:bg-accent transition-colors">
                   {skill}
                 </div>
               ))}
             </div>
+            <p className="text-sm text-muted-foreground mt-4 text-center">
+              ※ 詳細なスキルセットは準備中です
+            </p>
           </div>
         </div>
       </section>
@@ -60,21 +64,21 @@ export default function Home() {
             {[
               {
                 id: "project-1",
-                title: "Project 1",
-                description: "プロジェクトの説明をここに書きます",
-                tags: ["React", "TypeScript"],
+                title: "Portfolio Site",
+                description: "Next.js + Tailwind CSS で作成したポートフォリオサイト",
+                tags: ["Next.js", "TypeScript", "Tailwind CSS"],
               },
               {
                 id: "project-2",
-                title: "Project 2",
-                description: "プロジェクトの説明をここに書きます",
-                tags: ["Next.js", "Tailwind"],
+                title: "Coming Soon",
+                description: "プロジェクト情報を準備中です",
+                tags: ["準備中"],
               },
               {
                 id: "project-3",
-                title: "Project 3",
-                description: "プロジェクトの説明をここに書きます",
-                tags: ["Node.js", "API"],
+                title: "Coming Soon",
+                description: "プロジェクト情報を準備中です",
+                tags: ["準備中"],
               },
             ].map((project) => (
               <Link
@@ -107,16 +111,10 @@ export default function Home() {
           <div className="space-y-8">
             {[
               {
-                year: "2024 - Present",
-                title: "Job Title",
-                company: "Company Name",
-                description: "仕事の内容をここに書きます",
-              },
-              {
-                year: "2022 - 2024",
-                title: "Previous Job",
-                company: "Company Name",
-                description: "仕事の内容をここに書きます",
+                year: "現在",
+                title: "Software Engineer",
+                company: "詳細は準備中",
+                description: "ソフトウェア開発に従事",
               },
             ].map((job, index) => (
               <div key={index} className="flex gap-6 border-l-2 border-primary pl-6">
@@ -141,35 +139,24 @@ export default function Home() {
           </p>
           <div className="flex gap-4 justify-center">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/yukikotani231"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 border border-border rounded-lg hover:bg-accent transition-colors"
             >
               GitHub
             </a>
-            <a
-              href="https://twitter.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 border border-border rounded-lg hover:bg-accent transition-colors"
-            >
-              Twitter
-            </a>
-            <a
-              href="mailto:your.email@example.com"
-              className="px-6 py-3 border border-border rounded-lg hover:bg-accent transition-colors"
-            >
-              Email
-            </a>
           </div>
+          <p className="text-sm text-muted-foreground mt-4">
+            その他の連絡先は準備中です
+          </p>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-border">
         <div className="container mx-auto text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Yuki Kotani. All rights reserved.</p>
         </div>
       </footer>
     </main>
