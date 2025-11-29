@@ -216,18 +216,20 @@ export default function Home() {
                       href={`/works/${project.id}`}
                       className="group block h-full"
                     >
-                      <div className="h-full p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl hover:shadow-2xl hover:scale-[1.02] hover:border-purple-300 dark:hover:border-purple-700 transition-all duration-500 relative overflow-hidden">
+                      <div className="h-full min-h-[400px] flex flex-col p-8 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/50 dark:border-slate-700/50 rounded-3xl hover:shadow-2xl hover:scale-[1.02] hover:border-purple-300 dark:hover:border-purple-700 transition-all duration-500 relative overflow-hidden">
                       {/* Gradient overlay on hover */}
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:to-purple-500/5 transition-all duration-500 rounded-3xl"></div>
 
-                      <div className="relative z-10">
-                        <h3 className="text-2xl font-bold mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                          {project.title}
-                        </h3>
-                        <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
-                          {project.description}
-                        </p>
-                        <div className="flex gap-2 flex-wrap">
+                      <div className="relative z-10 flex flex-col h-full">
+                        <div className="flex-1">
+                          <h3 className="text-2xl font-bold mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                            {project.title}
+                          </h3>
+                          <p className="text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3">
+                            {project.description}
+                          </p>
+                        </div>
+                        <div className="flex gap-2 flex-wrap mt-auto pt-6">
                           {project.tags.map((tag) => (
                             <span
                               key={tag}
