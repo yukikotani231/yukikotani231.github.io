@@ -28,28 +28,66 @@ const projects = {
     date: "2025年11月",
   },
   "project-2": {
-    title: "Coming Soon",
-    description: "プロジェクト情報を準備中です",
+    title: "RepoLens",
+    description: "GitHub PR Review Tool - GitHub OAuthで認証し、プルリクエストを効率的にレビューするWebアプリケーション",
     longDescription: `
-      このプロジェクトの詳細は現在準備中です。
-      後日追加予定です。
+      GitHubユーザーがOAuth認証でログインし、アクセス可能なプルリクエストを一覧表示・詳細確認できるツールです。
+
+      主な機能：
+      - GitHub OAuth認証による安全なログイン
+      - アクセス可能なすべてのプルリクエストの表示
+      - コミット内容の変更を見やすく表示するDiff表示
+      - PR内のレビューコメント確認
+
+      技術的なポイント：
+      - Next.js 15 (App Router) による最新の構成
+      - TypeScriptを使用した型安全な開発
+      - NextAuth.js v5 + GitHub OAuth による認証実装
+      - Tailwind CSS によるモダンなUI/UX
+      - GitHub REST API を活用したデータ取得
+      - Vercel へのデプロイ構成
     `,
-    tags: ["準備中"],
-    github: undefined,
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "NextAuth.js", "GitHub API"],
+    github: "https://github.com/yukikotani231/repolens",
     demo: undefined,
-    date: "準備中",
+    date: "2025年11月",
   },
   "project-3": {
-    title: "Coming Soon",
-    description: "プロジェクト情報を準備中です",
+    title: "建設業向けバーティカルSaaS",
+    description: "建設業界向けの管理業務効率化SaaS - 複雑なフォーム制御やデータ構造設計を採用した大規模プロダクト",
     longDescription: `
-      このプロジェクトの詳細は現在準備中です。
-      後日追加予定です。
+      建設業界向けの管理業務効率化SaaSの開発・運用プロジェクト。テックリード兼フルスタックエンジニアとして、新機能開発から既存システムの最適化まで幅広い業務を担当。
+
+      主な成果：
+
+      1. CI/CDパイプラインの抜本的改善
+      - テスト並列実行化により、CI実行時間を30分から6分へと80%短縮
+      - 開発チームのリリースサイクルを大幅に高速化
+
+      2. 高度なデータ構造設計
+      - 閉包テーブル(Closure Table)を用いた複雑なフォーム分岐機能を実装
+      - チーム内最高難易度（ストーリーポイント基準）と評価された機能を完遂
+
+      3. 計算ロジックの抜本的改善
+      - トポロジカルソートを適用した計算エンジンを実装
+      - バグ発生率を顕著に削減
+
+      4. 大規模改修の計画的実行
+      - 約10万行のコード変更を伴う経費精算サービスの仕様変更を、デグレなしで完遂
+      - 大規模なコードベースに対する高い変更耐性を実証
+
+      チーム規模：正社員7名、インターン生15名を含む総勢20名超
+      期間：2024年1月〜現在
+
+      技術スタック：
+      - フロントエンド：React, TypeScript, Tailwind CSS
+      - バックエンド：TypeScript, Node.js (Express), GraphQL, PostgreSQL (Prisma)
+      - インフラ：AWS (EKS, RDS), Kubernetes (Flux), Prometheus, Grafana, Docker, Terraform
     `,
-    tags: ["準備中"],
+    tags: ["React", "TypeScript", "Node.js", "GraphQL", "PostgreSQL", "AWS", "Kubernetes"],
     github: undefined,
     demo: undefined,
-    date: "準備中",
+    date: "2024年1月〜現在",
   },
 };
 

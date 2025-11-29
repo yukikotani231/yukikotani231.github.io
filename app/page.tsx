@@ -181,15 +181,15 @@ export default function Home() {
                 },
                 {
                   id: "project-2",
-                  title: "Coming Soon",
-                  description: "プロジェクト情報を準備中です",
-                  tags: ["準備中"],
+                  title: "RepoLens",
+                  description: "GitHub PR Review Tool - GitHub OAuthで認証し、プルリクエストを効率的にレビューするWebアプリケーション",
+                  tags: ["Next.js", "TypeScript", "Tailwind CSS", "NextAuth.js", "GitHub API"],
                 },
                 {
                   id: "project-3",
-                  title: "Coming Soon",
-                  description: "プロジェクト情報を準備中です",
-                  tags: ["準備中"],
+                  title: "建設業向けバーティカルSaaS",
+                  description: "建設業界向けの管理業務効率化SaaS - 複雑なフォーム制御やデータ構造設計を採用した大規模プロダクト",
+                  tags: ["React", "TypeScript", "Node.js", "GraphQL", "PostgreSQL", "AWS", "Kubernetes"],
                 },
               ].map((project, index) => (
                 <FadeIn key={project.id} delay={0.1 + index * 0.1}>
