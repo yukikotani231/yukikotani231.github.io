@@ -36,8 +36,30 @@ export default function MouseFollower() {
       }
     };
 
+    const handleFocusLoss = () => {
+      if (followerRef.current) {
+        gsap.to(followerRef.current, {
+          opacity: 0,
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      }
+    };
+
+    const handleFocusGain = () => {
+      // Reset for smooth fade-in on next mouse move
+      isFirstMove = true;
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    window.addEventListener("blur", handleFocusLoss);
+    window.addEventListener("focus", handleFocusGain);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("blur", handleFocusLoss);
+      window.removeEventListener("focus", handleFocusGain);
+    };
   }, []);
 
   return (
