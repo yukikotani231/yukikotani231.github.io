@@ -29,8 +29,11 @@ export default function Home() {
               </h1>
             </FadeIn>
             <FadeIn delay={0.4}>
-              <p className="text-2xl md:text-3xl text-slate-700 dark:text-slate-300 mb-12 font-light">
-                Software Engineer
+              <p className="text-2xl md:text-3xl text-slate-700 dark:text-slate-300 mb-4 font-light">
+                Fullstack Engineer / Tech Lead
+              </p>
+              <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-12 font-light">
+                建設業向けSaaS開発のテックリード。フロント・バック・インフラまで幅広く。
               </p>
             </FadeIn>
             <FadeIn delay={0.6}>
@@ -76,14 +79,53 @@ export default function Home() {
               </h2>
             </FadeIn>
 
+            {/* Career Summary */}
             <FadeIn delay={0.2}>
+              <div className="grid md:grid-cols-3 gap-6 mb-20">
+                {[
+                  {
+                    period: "2022-2024",
+                    title: "インターン",
+                    company: "燈株式会社",
+                    desc: "アルゴリズム研究開発と技術実装",
+                  },
+                  {
+                    period: "2022-2023",
+                    title: "インターン",
+                    company: "OLIENT TECH",
+                    desc: "バックエンド開発（請求書自動化）",
+                  },
+                  {
+                    period: "2024～",
+                    title: "テックリード",
+                    company: "燈株式会社",
+                    desc: "20名超チーム統括・技術指導",
+                  },
+                ].map((item, index) => (
+                  <FadeIn key={item.period} delay={0.3 + index * 0.1}>
+                    <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-750 rounded-2xl p-6 text-center border border-slate-200 dark:border-slate-700">
+                      <div className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-2">{item.period}</div>
+                      <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-1">{item.title}</h4>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">{item.company}</p>
+                      <p className="text-sm text-slate-700 dark:text-slate-300">{item.desc}</p>
+                    </div>
+                  </FadeIn>
+                ))}
+              </div>
+            </FadeIn>
+
+            {/* About Me Text */}
+            <FadeIn delay={0.5}>
               <div className="prose dark:prose-invert mx-auto mb-20">
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-lg">
                   <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
-                    大学時代にOLIENT TECH株式会社、燈株式会社にてエンジニアのインターンを経験。OLINET TECH株式会社では運送業事業者向けの請求書作成アプリケーションの開発プロジェクトにバックエンドエンジニアとして参加し、その後SaaS化プロジェクトの立ち上げにも関与。燈株式会社ではDXソリューション事業部において図面データの構造化手法の研究開発業務に従事し、複数大手企業とのPoC案件にも参加。図面データ特化の機械学習モデルの提案や物体検出手法の開発を行なった。
+                    大学時代にOLIENT TECH株式会社、燈株式会社にてエンジニアのインターンを経験。OLIENT TECH では運送業事業者向けの請求書作成アプリケーション開発に従事。燈株式会社では図面データの構造化手法の研究開発業務に従事し、複数大手企業とのPoC案件に参加。
                   </p>
                   <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
-                    2024年にAI SaaS事業部に異動し、建設業界向けの管理業務効率化SaaSの開発・運用にフルスタックエンジニアとして参加。新機能開発や不具合調査修正に加え、ドキュメント整備・CI/CDの効率化による開発生産性向上や監視ツールの導入によるサービスの安定性可視化などを行った。現在はテックリード的立場として、複数プロダクト全体の技術的な方向性の決定も兼任している。
+                    2024年に正社員として燈株式会社AI SaaS事業部に配置。建設業向けバーティカルSaaSの開発・運用に従事。新機能開発やCI/CD最適化（30分→6分に短縮）、チーム技術指導を担当。現在はテックリードとして複数プロダクト全体の技術的な方向性を統括。
+                  </p>
+                  <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+                    <strong>得意領域：</strong>フルスタック開発（React/Next.js、Node.js/Express、GraphQL）、データベース設計、DevOps/インフラ、アルゴリズム開発、チーム技術リーダーシップ
                   </p>
                 </div>
               </div>
@@ -366,15 +408,15 @@ export default function Home() {
               {[
                 {
                   period: "2024年1月 - 現在 【正社員】",
-                  title: "フルスタックエンジニア",
+                  title: "テックリード / フルスタックエンジニア",
                   company: "燈株式会社",
                   description:
-                    "建設業向けSaaS開発・運用。新機能開発、システム最適化、チーム技術指導を担当。",
+                    "建設業向けSaaS開発・運用。正社員7名＋インターン15名の20名超チームを技術統括。",
                   highlights: [
-                    "バックエンド・フロントエンド開発",
-                    "データベース設計・最適化",
-                    "インフラ・DevOps",
-                    "チーム開発体制構築",
+                    "CI/CDパイプライン最適化: 30分→6分に短縮（80%削減）",
+                    "複雑なアルゴリズム設計（閉包テーブル）で最高難易度機能を完遂",
+                    "10万行コード変更を伴う大規模改修を無デグレでリリース",
+                    "複数プロダクト全体の技術的意思決定と開発生産性向上",
                   ],
                 },
                 {
@@ -456,28 +498,44 @@ export default function Home() {
               </p>
             </FadeIn>
             <FadeIn delay={0.4}>
-              <div className="flex gap-6 justify-center flex-wrap">
+              <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-2xl mx-auto">
                 <a
                   href="https://github.com/yukikotani231"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group px-8 py-4 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-slate-100 dark:to-slate-300 text-white dark:text-slate-900 rounded-full font-medium hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2"
+                  className="group p-6 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-2xl hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg transition-all duration-300 text-center"
                 >
                   <svg
-                    className="w-5 h-5"
+                    className="w-8 h-8 mx-auto mb-3 text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                   </svg>
-                  GitHub
+                  <h3 className="font-semibold text-slate-900 dark:text-white mb-1">GitHub</h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">@yukikotani231</p>
+                </a>
+                <a
+                  href="mailto:contact@yukikotani.dev"
+                  className="group p-6 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-2xl hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg transition-all duration-300 text-center"
+                >
+                  <svg
+                    className="w-8 h-8 mx-auto mb-3 text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <h3 className="font-semibold text-slate-900 dark:text-white mb-1">Email</h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-400 break-all">contact@yukikotani.dev</p>
                 </a>
               </div>
-            </FadeIn>
-            <FadeIn delay={0.6}>
-              <p className="text-sm text-slate-500 dark:text-slate-400 mt-8">
-                その他の連絡先は準備中です
-              </p>
             </FadeIn>
           </div>
         </section>
