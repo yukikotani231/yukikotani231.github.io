@@ -197,6 +197,12 @@ export default function Home() {
                   description: "モバイルプラットフォーム向けに画像生成AI機能とSNS機能を統合したアプリケーション。企画、開発、リリースまでを単独で実行。",
                   tags: ["React Native", "Expo", "Firebase", "Hugging Face API"],
                 },
+                {
+                  id: "project-5",
+                  title: "3PL事業者向け請求書作成補助アプリケーション",
+                  description: "3PL事業向けの月次請求書作成業務の自動化。手作業による煩雑な集計作業とヒューマンエラーを削減するシステム開発。",
+                  tags: ["Python", "Django", "PostgreSQL"],
+                },
               ].map((project, index) => (
                 <FadeIn key={project.id} delay={0.1 + index * 0.1}>
                   <TiltCard>
