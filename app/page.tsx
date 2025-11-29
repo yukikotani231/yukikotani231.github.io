@@ -521,7 +521,7 @@ export default function Home() {
                   <p className="text-sm text-slate-600 dark:text-slate-400">@yukikotani231</p>
                 </a>
                 <a
-                  href="mailto:contact@yukikotani.dev"
+                  href="mailto:kotani.yuki.231@gmail.com"
                   className="group p-6 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-2xl hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg transition-all duration-300 text-center"
                 >
                   <svg
@@ -538,7 +538,7 @@ export default function Home() {
                     />
                   </svg>
                   <h3 className="font-semibold text-slate-900 dark:text-white mb-1">Email</h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 break-all">contact@yukikotani.dev</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-400 break-all">kotani.yuki.231@gmail.com</p>
                 </a>
               </div>
             </FadeIn>
