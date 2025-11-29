@@ -77,41 +77,90 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.2}>
-              <div className="prose dark:prose-invert mx-auto text-center mb-20">
-                <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
-                  ソフトウェアエンジニアとして活動しています。
-                  <br />
-                  詳細な経歴やスキルについては、以下のセクションをご覧ください。
-                </p>
+              <div className="prose dark:prose-invert mx-auto mb-20">
+                <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-lg">
+                  <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                    東京大学機械工学科出身のフルスタックエンジニア。
+                    建設業界向けSaaSの開発・運用において、テックリードとして技術的意思決定を主導。
+                  </p>
+                  <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                    インターン時代から複雑なアルゴリズム開発や大規模システムの設計・実装を経験し、
+                    正社員として現在はチーム全体の技術的健全性の維持とプロダクト実現を担当。
+                  </p>
+                  <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+                    フロントエンド（React, TypeScript）、バックエンド（Node.js, GraphQL, PostgreSQL）、
+                    インフラ（AWS, Kubernetes）まで幅広い技術スタックに精通し、
+                    要件定義から実装、運用まで一貫した開発経験を有します。
+                  </p>
+                </div>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.4}>
               <div className="mt-16">
-                <h3 className="text-3xl font-bold mb-10 text-center">Skills</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {[
-                    "React",
-                    "TypeScript",
-                    "Next.js",
-                    "Node.js",
-                    "Python",
-                    "Go",
-                    "Docker",
-                    "AWS",
-                  ].map((skill, index) => (
-                    <FadeIn key={skill} delay={0.5 + index * 0.05}>
-                      <div className="group p-6 bg-gradient-to-br from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl text-center hover:shadow-xl hover:scale-105 hover:border-purple-300 dark:hover:border-purple-700 transition-all duration-300 cursor-default">
-                        <span className="text-lg font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-                          {skill}
-                        </span>
-                      </div>
-                    </FadeIn>
-                  ))}
+                <h3 className="text-3xl font-bold mb-12 text-center">Skills</h3>
+
+                {/* Programming Languages */}
+                <div className="mb-12">
+                  <h4 className="text-xl font-semibold mb-6 text-slate-900 dark:text-white">プログラミング言語</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {[
+                      { name: "TypeScript", level: "⭐⭐⭐⭐⭐", desc: "バックエンド・フロントエンド双方で実務経験" },
+                      { name: "JavaScript", level: "⭐⭐⭐⭐⭐", desc: "React, Node.jsで幅広く使用" },
+                      { name: "Python", level: "⭐⭐⭐⭐", desc: "Django, アルゴリズム開発で使用" },
+                    ].map((skill) => (
+                      <FadeIn key={skill.name} delay={0.5}>
+                        <div className="p-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:shadow-lg transition-all duration-300">
+                          <div className="font-semibold text-slate-900 dark:text-white mb-1">{skill.name}</div>
+                          <div className="text-sm text-slate-600 dark:text-slate-400 mb-2">{skill.level}</div>
+                          <div className="text-xs text-slate-500 dark:text-slate-500">{skill.desc}</div>
+                        </div>
+                      </FadeIn>
+                    ))}
+                  </div>
                 </div>
-                <p className="text-sm text-slate-500 dark:text-slate-400 mt-8 text-center">
-                  ※ 詳細なスキルセットは準備中です
-                </p>
+
+                {/* Frontend */}
+                <div className="mb-12">
+                  <h4 className="text-xl font-semibold mb-6 text-slate-900 dark:text-white">フロントエンド</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {["React", "TypeScript", "Next.js", "Tailwind CSS", "React Native", "Expo"].map((skill, index) => (
+                      <FadeIn key={skill} delay={0.5 + index * 0.05}>
+                        <div className="p-4 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 border border-blue-200 dark:border-blue-800 rounded-xl text-center hover:shadow-lg transition-all duration-300">
+                          <span className="text-sm font-medium text-blue-900 dark:text-blue-200">{skill}</span>
+                        </div>
+                      </FadeIn>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Backend */}
+                <div className="mb-12">
+                  <h4 className="text-xl font-semibold mb-6 text-slate-900 dark:text-white">バックエンド</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {["Node.js", "Express", "GraphQL", "PostgreSQL", "Prisma", "Django"].map((skill, index) => (
+                      <FadeIn key={skill} delay={0.5 + index * 0.05}>
+                        <div className="p-4 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/30 dark:to-pink-900/30 border border-purple-200 dark:border-purple-800 rounded-xl text-center hover:shadow-lg transition-all duration-300">
+                          <span className="text-sm font-medium text-purple-900 dark:text-purple-200">{skill}</span>
+                        </div>
+                      </FadeIn>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Infrastructure */}
+                <div className="mb-12">
+                  <h4 className="text-xl font-semibold mb-6 text-slate-900 dark:text-white">インフラ・クラウド</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {["AWS", "Kubernetes", "Docker", "Terraform", "GitHub Actions", "Prometheus"].map((skill, index) => (
+                      <FadeIn key={skill} delay={0.5 + index * 0.05}>
+                        <div className="p-4 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/30 dark:to-teal-900/30 border border-emerald-200 dark:border-emerald-800 rounded-xl text-center hover:shadow-lg transition-all duration-300">
+                          <span className="text-sm font-medium text-emerald-900 dark:text-emerald-200">{skill}</span>
+                        </div>
+                      </FadeIn>
+                    ))}
+                  </div>
+                </div>
               </div>
             </FadeIn>
           </div>
@@ -198,28 +247,71 @@ export default function Home() {
             <div className="space-y-12">
               {[
                 {
-                  year: "現在",
-                  title: "Software Engineer",
-                  company: "詳細は準備中",
-                  description: "ソフトウェア開発に従事",
+                  period: "2024年1月 - 現在",
+                  title: "テックリード / フルスタックエンジニア",
+                  company: "燈株式会社",
+                  description:
+                    "建設業界向けSaaS開発において、技術的意思決定と実行を主導。チーム全体の技術的健全性の維持と、プロダクト実現を担当。",
+                  highlights: [
+                    "複雑なデータ構造設計と実装",
+                    "CI/CDパイプラインの改善と最適化",
+                    "大規模システム改修の計画・実行",
+                    "チーム開発・コードレビュー体制の確立",
+                  ],
+                },
+                {
+                  period: "2022年7月 - 2024年3月",
+                  title: "アルゴリズムエンジニア / バックエンドエンジニア（インターン）",
+                  company: "燈株式会社",
+                  description:
+                    "建設業向けの技術開発に従事。アルゴリズム開発から請求システム構築まで、幅広い開発経験を積む。",
+                  highlights: [
+                    "複雑なアルゴリズムの研究開発",
+                    "ベクターデータ処理と幾何学的解析",
+                    "バックエンドシステムの設計・実装",
+                    "業務効率化ツールの開発",
+                  ],
+                },
+                {
+                  period: "2023年4月 - 2023年9月",
+                  title: "フルスタックエンジニア（個人開発）",
+                  company: "個人開発",
+                  description:
+                    "AI機能を統合したモバイルアプリケーション開発。企画から実装、デプロイまでを単独で完遂。",
+                  highlights: [
+                    "モバイルアプリ開発（React Native / Expo）",
+                    "Firebase による認証・データベース構築",
+                    "外部API連携",
+                    "アプリストアへのリリース",
+                  ],
                 },
               ].map((job, index) => (
-                <FadeIn key={index} delay={0.2}>
+                <FadeIn key={index} delay={0.2 + index * 0.1}>
                   <div className="flex gap-8 relative">
                     <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
                     <div className="absolute left-0 top-2 w-4 h-4 -ml-[7px] bg-gradient-to-br from-blue-500 to-purple-500 rounded-full shadow-lg"></div>
                     <div className="pl-10 flex-1">
-                      <div className="min-w-[120px] text-sm font-semibold text-purple-600 dark:text-purple-400 mb-2">
-                        {job.year}
+                      <div className="text-sm font-semibold text-purple-600 dark:text-purple-400 mb-2">
+                        {job.period}
                       </div>
                       <div className="p-6 bg-gradient-to-br from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl hover:shadow-lg transition-shadow">
                         <h3 className="text-2xl font-bold mb-2">{job.title}</h3>
-                        <p className="text-slate-600 dark:text-slate-400 mb-2 font-medium">
+                        <p className="text-slate-600 dark:text-slate-400 mb-4 font-medium">
                           {job.company}
                         </p>
-                        <p className="text-slate-700 dark:text-slate-300">
+                        <p className="text-slate-700 dark:text-slate-300 mb-4">
                           {job.description}
                         </p>
+                        <div className="flex flex-wrap gap-2">
+                          {job.highlights.map((highlight) => (
+                            <span
+                              key={highlight}
+                              className="text-xs px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full"
+                            >
+                              {highlight}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
