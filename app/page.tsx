@@ -4,6 +4,7 @@ import FadeIn from "./components/FadeIn";
 import MouseFollower from "./components/MouseFollower";
 import TiltCard from "./components/TiltCard";
 import TypeWriter from "./components/TypeWriter";
+import CountUp from "./components/CountUp";
 
 export default function Home() {
   return (
@@ -147,92 +148,163 @@ export default function Home() {
             {/* GitHub Stats */}
             <FadeIn delay={0.4}>
               <div className="mt-16">
-                <h3 className="text-3xl font-bold mb-12 text-center">GitHub Stats</h3>
-                <div className="flex flex-col items-center gap-8">
-                  {/* Profile Details */}
-                  <div className="w-full max-w-4xl">
-                    <picture>
-                      <source
-                        srcSet="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=yukikotani231&theme=tokyonight"
-                        media="(prefers-color-scheme: dark)"
-                      />
-                      <img
-                        src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=yukikotani231&theme=default"
-                        alt="GitHub Profile Details"
-                        className="w-full h-auto"
-                      />
-                    </picture>
+                <h3 className="text-3xl font-bold mb-4 text-center">GitHub Stats</h3>
+                <p className="text-center text-slate-600 dark:text-slate-400 mb-12">
+                  <a
+                    href="https://github.com/yukikotani231"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    @yukikotani231
+                  </a>
+                </p>
+
+                {/* Highlight Stats with Count Up Animation */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+                  {[
+                    { value: 11489, label: "Total Contributions", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", color: "from-blue-500 to-cyan-500" },
+                    { value: 5160, label: "2025 Contributions", icon: "M13 10V3L4 14h7v7l9-11h-7z", color: "from-purple-500 to-pink-500" },
+                    { value: 13, label: "Public Repos", icon: "M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z", color: "from-emerald-500 to-teal-500" },
+                    { value: 34, label: "Longest Streak", suffix: " days", icon: "M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z", color: "from-orange-500 to-red-500" },
+                  ].map((stat, index) => (
+                    <FadeIn key={stat.label} delay={0.5 + index * 0.1}>
+                      <div className="group relative">
+                        <div className={`absolute -inset-0.5 bg-gradient-to-r ${stat.color} rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500`}></div>
+                        <div className="relative bg-white dark:bg-slate-800 rounded-2xl p-6 text-center border border-slate-200 dark:border-slate-700 hover:scale-105 transition-transform duration-300">
+                          <div className={`inline-flex items-center justify-center w-12 h-12 mb-4 rounded-xl bg-gradient-to-r ${stat.color}`}>
+                            <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={stat.icon} />
+                            </svg>
+                          </div>
+                          <div className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">
+                            <CountUp end={stat.value} duration={2.5} suffix={stat.suffix || ""} />
+                          </div>
+                          <div className="text-sm text-slate-600 dark:text-slate-400">{stat.label}</div>
+                        </div>
+                      </div>
+                    </FadeIn>
+                  ))}
+                </div>
+
+                {/* Contribution Graph */}
+                <FadeIn delay={0.8}>
+                  <div className="relative group mb-8">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+                    <a
+                      href="https://github.com/yukikotani231"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative block bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300 overflow-hidden"
+                    >
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="text-lg font-semibold text-slate-900 dark:text-white">Contribution Activity</h4>
+                        <span className="text-sm text-slate-500 dark:text-slate-400 group-hover:text-blue-500 transition-colors flex items-center gap-1">
+                          View on GitHub
+                          <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </span>
+                      </div>
+                      <picture>
+                        <source
+                          srcSet="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=yukikotani231&theme=tokyonight"
+                          media="(prefers-color-scheme: dark)"
+                        />
+                        <img
+                          src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=yukikotani231&theme=default"
+                          alt="GitHub Contribution Graph"
+                          className="w-full h-auto rounded-lg"
+                        />
+                      </picture>
+                    </a>
                   </div>
+                </FadeIn>
 
-                  {/* Stats Cards Row */}
-                  <div className="flex flex-col md:flex-row gap-4 justify-center items-center w-full">
-                    {/* Stats Card */}
-                    <picture>
-                      <source
-                        srcSet="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=yukikotani231&theme=tokyonight"
-                        media="(prefers-color-scheme: dark)"
-                      />
-                      <img
-                        src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=yukikotani231&theme=default"
-                        alt="GitHub Stats"
-                        className="h-auto"
-                      />
-                    </picture>
+                {/* Language & Time Stats */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <FadeIn delay={0.9}>
+                    <div className="group relative">
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+                      <div className="relative bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700">
+                        <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                          <span className="w-8 h-8 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                          </span>
+                          Top Languages
+                        </h4>
+                        <div className="flex gap-4">
+                          <picture className="flex-1">
+                            <source
+                              srcSet="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=yukikotani231&theme=tokyonight"
+                              media="(prefers-color-scheme: dark)"
+                            />
+                            <img
+                              src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=yukikotani231&theme=default"
+                              alt="Most Commit Language"
+                              className="w-full h-auto rounded-lg"
+                            />
+                          </picture>
+                          <picture className="flex-1">
+                            <source
+                              srcSet="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=yukikotani231&theme=tokyonight"
+                              media="(prefers-color-scheme: dark)"
+                            />
+                            <img
+                              src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=yukikotani231&theme=default"
+                              alt="Repos per Language"
+                              className="w-full h-auto rounded-lg"
+                            />
+                          </picture>
+                        </div>
+                      </div>
+                    </div>
+                  </FadeIn>
 
-                    {/* Commits per Language */}
-                    <picture>
-                      <source
-                        srcSet="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=yukikotani231&theme=tokyonight"
-                        media="(prefers-color-scheme: dark)"
-                      />
-                      <img
-                        src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=yukikotani231&theme=default"
-                        alt="Most Commit Language"
-                        className="h-auto"
-                      />
-                    </picture>
-
-                    {/* Repos per Language */}
-                    <picture>
-                      <source
-                        srcSet="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=yukikotani231&theme=tokyonight"
-                        media="(prefers-color-scheme: dark)"
-                      />
-                      <img
-                        src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=yukikotani231&theme=default"
-                        alt="Repos per Language"
-                        className="h-auto"
-                      />
-                    </picture>
-                  </div>
-
-                  {/* Productive Time */}
-                  <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-                    <picture>
-                      <source
-                        srcSet="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=yukikotani231&theme=tokyonight&utcOffset=9"
-                        media="(prefers-color-scheme: dark)"
-                      />
-                      <img
-                        src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=yukikotani231&theme=default&utcOffset=9"
-                        alt="Productive Time"
-                        className="h-auto"
-                      />
-                    </picture>
-
-                    {/* GitHub Streak */}
-                    <picture>
-                      <source
-                        srcSet="https://github-readme-streak-stats.herokuapp.com/?user=yukikotani231&theme=tokyonight&hide_border=true"
-                        media="(prefers-color-scheme: dark)"
-                      />
-                      <img
-                        src="https://github-readme-streak-stats.herokuapp.com/?user=yukikotani231&theme=default&hide_border=true"
-                        alt="GitHub Streak"
-                        className="h-auto"
-                      />
-                    </picture>
-                  </div>
+                  <FadeIn delay={1.0}>
+                    <div className="group relative">
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+                      <div className="relative bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700">
+                        <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                          <span className="w-8 h-8 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </span>
+                          Coding Activity
+                        </h4>
+                        <div className="flex gap-4">
+                          <picture className="flex-1">
+                            <source
+                              srcSet="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=yukikotani231&theme=tokyonight&utcOffset=9"
+                              media="(prefers-color-scheme: dark)"
+                            />
+                            <img
+                              src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=yukikotani231&theme=default&utcOffset=9"
+                              alt="Productive Time"
+                              className="w-full h-auto rounded-lg"
+                            />
+                          </picture>
+                          <picture className="flex-1">
+                            <source
+                              srcSet="https://github-readme-streak-stats.herokuapp.com/?user=yukikotani231&theme=tokyonight&hide_border=true"
+                              media="(prefers-color-scheme: dark)"
+                            />
+                            <img
+                              src="https://github-readme-streak-stats.herokuapp.com/?user=yukikotani231&theme=default&hide_border=true"
+                              alt="GitHub Streak"
+                              className="w-full h-auto rounded-lg"
+                            />
+                          </picture>
+                        </div>
+                      </div>
+                    </div>
+                  </FadeIn>
                 </div>
               </div>
             </FadeIn>
