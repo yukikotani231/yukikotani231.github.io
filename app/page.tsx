@@ -144,8 +144,101 @@ export default function Home() {
               </div>
             </FadeIn>
 
+            {/* GitHub Stats */}
             <FadeIn delay={0.4}>
               <div className="mt-16">
+                <h3 className="text-3xl font-bold mb-12 text-center">GitHub Stats</h3>
+                <div className="flex flex-col items-center gap-8">
+                  {/* Profile Details */}
+                  <div className="w-full max-w-4xl">
+                    <picture>
+                      <source
+                        srcSet="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=yukikotani231&theme=tokyonight"
+                        media="(prefers-color-scheme: dark)"
+                      />
+                      <img
+                        src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=yukikotani231&theme=default"
+                        alt="GitHub Profile Details"
+                        className="w-full h-auto"
+                      />
+                    </picture>
+                  </div>
+
+                  {/* Stats Cards Row */}
+                  <div className="flex flex-col md:flex-row gap-4 justify-center items-center w-full">
+                    {/* Stats Card */}
+                    <picture>
+                      <source
+                        srcSet="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=yukikotani231&theme=tokyonight"
+                        media="(prefers-color-scheme: dark)"
+                      />
+                      <img
+                        src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=yukikotani231&theme=default"
+                        alt="GitHub Stats"
+                        className="h-auto"
+                      />
+                    </picture>
+
+                    {/* Commits per Language */}
+                    <picture>
+                      <source
+                        srcSet="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=yukikotani231&theme=tokyonight"
+                        media="(prefers-color-scheme: dark)"
+                      />
+                      <img
+                        src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=yukikotani231&theme=default"
+                        alt="Most Commit Language"
+                        className="h-auto"
+                      />
+                    </picture>
+
+                    {/* Repos per Language */}
+                    <picture>
+                      <source
+                        srcSet="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=yukikotani231&theme=tokyonight"
+                        media="(prefers-color-scheme: dark)"
+                      />
+                      <img
+                        src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=yukikotani231&theme=default"
+                        alt="Repos per Language"
+                        className="h-auto"
+                      />
+                    </picture>
+                  </div>
+
+                  {/* Productive Time */}
+                  <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+                    <picture>
+                      <source
+                        srcSet="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=yukikotani231&theme=tokyonight&utcOffset=9"
+                        media="(prefers-color-scheme: dark)"
+                      />
+                      <img
+                        src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=yukikotani231&theme=default&utcOffset=9"
+                        alt="Productive Time"
+                        className="h-auto"
+                      />
+                    </picture>
+
+                    {/* GitHub Streak */}
+                    <picture>
+                      <source
+                        srcSet="https://github-readme-streak-stats.herokuapp.com/?user=yukikotani231&theme=tokyonight&hide_border=true"
+                        media="(prefers-color-scheme: dark)"
+                      />
+                      <img
+                        src="https://github-readme-streak-stats.herokuapp.com/?user=yukikotani231&theme=default&hide_border=true"
+                        alt="GitHub Streak"
+                        className="h-auto"
+                      />
+                    </picture>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.5}>
+              <div className="mt-20">
                 <h3 className="text-3xl font-bold mb-12 text-center">Skills</h3>
 
                 {/* Programming Languages */}
