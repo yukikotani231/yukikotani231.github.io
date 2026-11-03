@@ -4,36 +4,31 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a personal portfolio website built with Next.js 15, TypeScript, and Tailwind CSS. The site uses static export for deployment to GitHub Pages.
+This is a personal portfolio website built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4. The site uses static export for deployment to GitHub Pages.
 
 ## Technology Stack
 
-- **Framework**: Next.js 15 (App Router with static export)
+- **Framework**: Next.js 16 (App Router with static export), React 19
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS + shadcn/ui components
-- **Deployment**: GitHub Pages (static files in `docs/` folder)
+- **Styling**: Tailwind CSS v4 (CSS-first config in `app/globals.css`, no `tailwind.config`)
+- **Animation**: Motion (`motion/react`)
+- **Package manager**: pnpm (version pinned via `packageManager` in `package.json`)
+- **Deployment**: GitHub Actions → GitHub Pages (artifact from `out/`)
 
 ## Development Commands
 
 ```bash
-# Development server (http://localhost:3000)
-npm run dev
-
-# Build for production
-npm run build
-
-# Deploy to GitHub Pages (builds and moves output to docs/)
-npm run deploy
-
-# Linting
-npm run lint
+pnpm dev         # Development server (http://localhost:3000)
+pnpm build       # Static export to out/
+pnpm lint        # ESLint 10 (flat config: eslint.config.mjs)
+pnpm typecheck   # tsc --noEmit
 ```
 
 ## Architecture
 
 ### Static Export Configuration
 
-The site is configured for static export via `next.config.js`:
+The site is configured for static export via `next.config.ts`:
 - `output: 'export'` - Generates static HTML files
 - `images.unoptimized: true` - Required for static export
 - `trailingSlash: true` - Adds trailing slashes to URLs for GitHub Pages
@@ -67,21 +62,17 @@ lib/
 
 ### Styling System
 
-The project uses Tailwind CSS with shadcn/ui conventions:
-- CSS variables defined in `app/globals.css` for theming (neutral palette + amber `accent`)
-- Dark mode support via `class` strategy
+- Theme tokens (oklch) are CSS variables in `app/globals.css`, exposed to Tailwind via `@theme inline` (neutral palette + amber `accent`)
+- Dark mode uses the `.dark` class (`@custom-variant dark`) toggled by `next-themes`
+- Custom utilities are declared with `@utility` (e.g. `bg-dots`, `mask-fade`)
 - `cn()` utility from `lib/utils.ts` for conditional classnames
-- Component variants can be created using `class-variance-authority`
 
 ## Deployment Workflow
 
-The `npm run deploy` command:
-1. Runs `next build` to generate static files in `out/`
-2. Creates `.nojekyll` file (prevents Jekyll processing on GitHub Pages)
-3. Removes old `docs/` folder
-4. Renames `out/` to `docs/`
-
-GitHub Actions (`.github/workflows/build_docs.yml`) automatically builds and commits the `docs/` folder on PRs to `main`.
+- `.github/workflows/nextjs.yml`: on push to `main`, builds with pnpm and deploys `out/` to GitHub Pages
+- `.github/workflows/ci.yml`: on pull requests, runs lint / typecheck / build
+- `.github/dependabot.yml`: weekly grouped updates for npm (pnpm) and GitHub Actions
+- Security overrides for transitive deps live in `pnpm-workspace.yaml`
 
 ## Repository Conventions
 
@@ -96,7 +87,6 @@ Prefixes:
 
 ## Important Notes
 
-- **Never edit files in `docs/` directly** - they are auto-generated
-- The site uses Next.js 15's async params pattern for dynamic routes
+- Dynamic routes use the async `params` pattern (Next.js 15+)
 - All images must use `unoptimized: true` due to static export
 - Metadata is defined in `app/layout.tsx` for SEO

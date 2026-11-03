@@ -89,7 +89,7 @@ export default function Home() {
             <FadeIn>
               <a
                 href="#experience"
-                className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3 py-1 text-xs text-muted-foreground backdrop-blur transition-colors hover:text-foreground"
+                className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3 py-1 text-xs text-muted-foreground backdrop-blur-sm transition-colors hover:text-foreground"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                 燈株式会社でエンタープライズSaaSを開発中

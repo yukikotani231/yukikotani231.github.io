@@ -10,7 +10,7 @@ const notoSansJp = Noto_Sans_JP({
   variable: "--font-noto-jp",
   display: "swap",
 });
-const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yukikotani231.github.io"),
