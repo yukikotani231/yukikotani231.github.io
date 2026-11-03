@@ -42,41 +42,33 @@ The site is configured for static export via `next.config.js`:
 
 ```
 app/
-├── layout.tsx                 # Root layout with metadata
-├── page.tsx                   # Main portfolio page (hybrid one-page design)
-│                              # Sections: Hero, About, Skills, Works, Career, Contact
-├── globals.css                # Global styles and Tailwind CSS variables
-└── works/
-    └── [slug]/
-        ├── page.tsx           # Dynamic project detail pages
-        └── not-found.tsx      # 404 for invalid projects
+├── layout.tsx                 # Root layout (fonts, metadata, ThemeProvider)
+├── page.tsx                   # Main page: Hero, Highlights, About, Experience, Works, Skills, Contact
+├── globals.css                # Theme tokens (CSS variables, light/dark) and utilities
+├── components/                # Navigation, FadeIn, ThemeProvider, Icons
+└── works/[slug]/
+    ├── page.tsx               # Project detail pages (renders longDescription as structured text)
+    └── not-found.tsx
 
 lib/
-└── utils.ts                   # Utility functions (cn for classnames)
-
-docs/                          # Build output for GitHub Pages (DO NOT EDIT MANUALLY)
+├── projects.ts                # Project data (single source of truth)
+└── utils.ts                   # cn() helper
 ```
 
 ### Content Management
 
-**Project data** is currently hardcoded in `app/works/[slug]/page.tsx` as a `projects` object. To add or modify projects:
+**Project data** lives in `lib/projects.ts` and is shared by the home page and detail pages.
 
-1. Edit the `projects` object in `app/works/[slug]/page.tsx`
-2. Each project requires: `title`, `description`, `longDescription`, `tags`, `date`
-3. Optional: `github`, `demo` (can be `undefined`)
-4. The slug (object key) is used in the URL: `/works/{slug}`
+1. Add/edit an entry in `projects` (`title`, `description`, `longDescription`, `tags`, `date`, `category`; optional `github`, `demo`)
+2. Add its slug to `projectOrder` (the first slug is shown as the featured card)
+3. In `longDescription`, lines ending with `：` become section headings, `1. ...` become subheadings, `- ...` become bullets, and `期間：` / `役割：` / `チーム規模：` lines are shown as metadata
 
-**Main page content** is in `app/page.tsx`:
-- Personal information in Hero section (lines 10-14)
-- Skills array (line 46)
-- Project cards (lines 64-83) - should match projects in detail pages
-- Career timeline (lines 112-119)
-- Contact links (lines 141-148)
+**Main page content** (highlights, experiences, skills, contact) is defined as arrays at the top of `app/page.tsx`.
 
 ### Styling System
 
 The project uses Tailwind CSS with shadcn/ui conventions:
-- CSS variables defined in `app/globals.css` for theming
+- CSS variables defined in `app/globals.css` for theming (neutral palette + amber `accent`)
 - Dark mode support via `class` strategy
 - `cn()` utility from `lib/utils.ts` for conditional classnames
 - Component variants can be created using `class-variance-authority`

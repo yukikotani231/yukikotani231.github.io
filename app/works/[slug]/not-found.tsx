@@ -2,17 +2,16 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
+    <div className="flex min-h-screen items-center justify-center px-6">
       <div className="text-center">
-        <h2 className="text-3xl font-bold mb-4">Project Not Found</h2>
-        <p className="text-muted-foreground mb-8">
-          お探しのプロジェクトが見つかりませんでした。
-        </p>
+        <p className="font-mono text-sm text-accent">404</p>
+        <h1 className="mt-2 text-3xl font-semibold tracking-tight">Project Not Found</h1>
+        <p className="mt-4 text-muted-foreground">お探しのプロジェクトが見つかりませんでした。</p>
         <Link
           href="/#works"
-          className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors inline-block"
+          className="mt-8 inline-block rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
         >
-          すべてのプロジェクトを見る
+          Works に戻る
         </Link>
       </div>
     </div>
