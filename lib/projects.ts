@@ -65,7 +65,7 @@ export const projects: Record<string, Project> = {
     title: "建設業向けバーティカルSaaS",
     description: "建設業界向けの管理業務効率化SaaS - 複雑なフォーム制御やデータ構造設計を採用した大規模プロダクト",
     longDescription: `
-      建設業界向けの管理業務効率化SaaSの開発・運用プロジェクト。テックリード兼フルスタックエンジニアとして、新機能開発から既存システムの最適化まで幅広い業務を担当。
+      建設業界向けの管理業務効率化SaaSの開発・運用プロジェクト。テックリード兼フルスタックエンジニアとして、新機能開発から既存システムの最適化まで幅広い業務を担当した。
 
       主な成果：
 
@@ -86,7 +86,7 @@ export const projects: Record<string, Project> = {
       - 大規模なコードベースに対する高い変更耐性を実証
 
       チーム規模：正社員7名、インターン生15名を含む総勢20名超
-      期間：2024年1月〜現在
+      期間：2024年1月〜2026年
 
       技術スタック：
       - フロントエンド：React, TypeScript, Tailwind CSS
@@ -94,7 +94,7 @@ export const projects: Record<string, Project> = {
       - インフラ：AWS (EKS, RDS), Kubernetes (Flux), Prometheus, Grafana, Docker, Terraform
     `,
     tags: ["React", "TypeScript", "Node.js", "GraphQL", "PostgreSQL", "AWS", "Kubernetes"],
-    date: "2024年1月〜現在",
+    date: "2024年1月〜2026年",
   },
   "project-4": {
     category: "personal",

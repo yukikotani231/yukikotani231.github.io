@@ -8,6 +8,9 @@ import { categoryLabel, projectOrder, projects } from "@/lib/projects";
 const EMAIL = "kotani.yuki.231@gmail.com";
 const GITHUB = "https://github.com/yukikotani231";
 
+/** Hero に表示する現在のステータス（null で非表示） */
+const CURRENT_STATUS: string | null = null;
+
 const highlights = [
   { value: "80%", label: "CI実行時間を短縮", note: "30分 → 6分" },
   { value: "10万行", label: "大規模改修をリリース", note: "デグレなし" },
@@ -17,12 +20,12 @@ const highlights = [
 
 const experiences = [
   {
-    period: "2025.03 — 現在",
+    period: "2025.03 — 2026",
     type: "正社員",
     title: "テックリード / フルスタックエンジニア",
     company: "燈株式会社",
     description:
-      "建設業向けエンタープライズSaaSの開発・運用。複数プロダクトの技術的意思決定と開発生産性の向上をリード。",
+      "建設業向けエンタープライズSaaSの開発・運用を担当。複数プロダクトの技術的意思決定と開発生産性の向上をリードした。",
     highlights: [
       "テスト並列化でCI/CDを30分→6分に短縮（80%削減）",
       "閉包テーブルを用いたフォーム分岐機能など、チーム最高難易度の機能を完遂",
@@ -86,15 +89,17 @@ export default function Home() {
           <div className="pointer-events-none absolute left-1/2 top-[-12rem] h-[28rem] w-[48rem] -translate-x-1/2 rounded-full bg-accent/15 blur-3xl dark:bg-accent/10" />
 
           <div className="relative mx-auto flex min-h-[92vh] max-w-5xl flex-col justify-center px-6 pb-20 pt-32">
-            <FadeIn>
-              <a
-                href="#experience"
-                className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3 py-1 text-xs text-muted-foreground backdrop-blur-sm transition-colors hover:text-foreground"
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                燈株式会社でエンタープライズSaaSを開発中
-              </a>
-            </FadeIn>
+            {CURRENT_STATUS && (
+              <FadeIn>
+                <a
+                  href="#experience"
+                  className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3 py-1 text-xs text-muted-foreground backdrop-blur-sm transition-colors hover:text-foreground"
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                  {CURRENT_STATUS}
+                </a>
+              </FadeIn>
+            )}
 
             <FadeIn delay={0.05}>
               <h1 className="text-5xl font-semibold tracking-tight sm:text-7xl md:text-8xl">
@@ -113,7 +118,7 @@ export default function Home() {
               <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
                 エンタープライズSaaSの
                 <span className="text-foreground">複雑な技術課題</span>
-                を解くエンジニア。開発生産性の向上と大規模改修を通じて、プロダクト全体の成長をリードしています。
+                を解くエンジニア。開発生産性の向上と大規模改修を通じて、プロダクト全体の成長をリードしてきました。
               </p>
             </FadeIn>
 
@@ -172,8 +177,8 @@ export default function Home() {
           <div className="grid gap-12 md:grid-cols-[1fr_16rem]">
             <FadeIn className="space-y-6 text-base leading-loose text-muted-foreground md:text-lg">
               <p>
-                現在は<span className="text-foreground">燈株式会社</span>
-                で、建設業向けエンタープライズSaaSの開発・運用を担当しています。CI/CDの最適化、閉包テーブルやトポロジカルソートを用いたデータ構造・計算ロジックの設計、10万行規模の改修など、難易度の高い課題に向き合ってきました。
+                <span className="text-foreground">燈株式会社</span>
+                では、テックリードとして建設業向けエンタープライズSaaSの開発・運用を担当しました。CI/CDの最適化、閉包テーブルやトポロジカルソートを用いたデータ構造・計算ロジックの設計、10万行規模の改修など、難易度の高い課題に向き合ってきました。
               </p>
               <p>
                 インターン時代にはCADデータを構造化するアルゴリズムの研究開発に携わり、論文や既存ライブラリに答えがない問題を自分で設計して解く経験を積みました。フロントエンドからインフラ、アルゴリズムまで、領域をまたいで「動くもの」を届けることが好きです。

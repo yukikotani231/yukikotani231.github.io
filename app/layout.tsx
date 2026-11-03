@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "エンタープライズSaaSの複雑な技術課題を解くフルスタックエンジニア / テックリード、Yuki Kotani のポートフォリオ。",
   openGraph: {
     title: "Yuki Kotani — Software Engineer",
-    description: "Fullstack Engineer / Tech Lead. Building enterprise SaaS at 燈株式会社.",
+    description: "Fullstack Engineer / Tech Lead. Solving complex problems in enterprise SaaS.",
     url: "/",
     siteName: "Yuki Kotani",
     locale: "ja_JP",
