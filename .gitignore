@@ -28,3 +28,6 @@ yarn-error.log*
 # MCP/testing
 .playwright-mcp/
 .serena/
+
+# typescript
+*.tsbuildinfo
