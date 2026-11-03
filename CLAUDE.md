@@ -10,8 +10,8 @@ This is a personal portfolio website built with Next.js 16, React 19, TypeScript
 
 - **Framework**: Next.js 16 (App Router with static export), React 19
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS v4 (CSS-first config in `app/globals.css`, no `tailwind.config`)
-- **Animation**: Motion (`motion/react`)
+- **Styling**: Tailwind CSS v4 (CSS-first config in `app/globals.css`, no `tailwind.config`) + shadcn/ui conventions
+- **Animation**: Motion (`motion/react`), GSAP
 - **Package manager**: pnpm (version pinned via `packageManager` in `package.json`)
 - **Deployment**: GitHub Actions → GitHub Pages (artifact from `out/`)
 
@@ -37,34 +37,42 @@ The site is configured for static export via `next.config.ts`:
 
 ```
 app/
-├── layout.tsx                 # Root layout (fonts, metadata, ThemeProvider)
-├── page.tsx                   # Main page: Hero, Highlights, About, Experience, Works, Skills, Contact
-├── globals.css                # Theme tokens (CSS variables, light/dark) and utilities
-├── components/                # Navigation, FadeIn, ThemeProvider, Icons
-└── works/[slug]/
-    ├── page.tsx               # Project detail pages (renders longDescription as structured text)
-    └── not-found.tsx
+├── layout.tsx                 # Root layout with metadata
+├── page.tsx                   # Main portfolio page (hybrid one-page design)
+│                              # Sections: Hero, About, Skills, Works, Career, Contact
+├── globals.css                # Global styles and Tailwind CSS variables
+└── works/
+    └── [slug]/
+        ├── page.tsx           # Dynamic project detail pages
+        └── not-found.tsx      # 404 for invalid projects
 
 lib/
-├── projects.ts                # Project data (single source of truth)
-└── utils.ts                   # cn() helper
+└── utils.ts                   # Utility functions (cn for classnames)
+
 ```
 
 ### Content Management
 
-**Project data** lives in `lib/projects.ts` and is shared by the home page and detail pages.
+**Project data** is currently hardcoded in `app/works/[slug]/page.tsx` as a `projects` object. To add or modify projects:
 
-1. Add/edit an entry in `projects` (`title`, `description`, `longDescription`, `tags`, `date`, `category`; optional `github`, `demo`)
-2. Add its slug to `projectOrder` (the first slug is shown as the featured card)
-3. In `longDescription`, lines ending with `：` become section headings, `1. ...` become subheadings, `- ...` become bullets, and `期間：` / `役割：` / `チーム規模：` lines are shown as metadata
+1. Edit the `projects` object in `app/works/[slug]/page.tsx`
+2. Each project requires: `title`, `description`, `longDescription`, `tags`, `date`
+3. Optional: `github`, `demo` (can be `undefined`)
+4. The slug (object key) is used in the URL: `/works/{slug}`
 
-**Main page content** (highlights, experiences, skills, contact) is defined as arrays at the top of `app/page.tsx`.
+**Main page content** is in `app/page.tsx`:
+- Personal information in Hero section (lines 10-14)
+- Skills array (line 46)
+- Project cards (lines 64-83) - should match projects in detail pages
+- Career timeline (lines 112-119)
+- Contact links (lines 141-148)
 
 ### Styling System
 
-- Theme tokens (oklch) are CSS variables in `app/globals.css`, exposed to Tailwind via `@theme inline` (neutral palette + amber `accent`)
+The project uses Tailwind CSS v4 with shadcn/ui conventions:
+- Theme tokens are CSS variables in `app/globals.css`, exposed to Tailwind via `@theme inline`
 - Dark mode uses the `.dark` class (`@custom-variant dark`) toggled by `next-themes`
-- Custom utilities are declared with `@utility` (e.g. `bg-dots`, `mask-fade`)
+- Custom utilities/animations are declared in CSS (`@utility`, `@keyframes` inside `@theme`)
 - `cn()` utility from `lib/utils.ts` for conditional classnames
 
 ## Deployment Workflow
