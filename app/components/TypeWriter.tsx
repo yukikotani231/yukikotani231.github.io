@@ -30,8 +30,10 @@ export default function TypeWriter({
       timeout = setTimeout(() => setIsDeleting(true), pauseDuration);
     } else if (isDeleting && displayText === "") {
       // Finished deleting, move to next text
-      setIsDeleting(false);
-      setTextIndex((prev) => (prev + 1) % texts.length);
+      timeout = setTimeout(() => {
+        setIsDeleting(false);
+        setTextIndex((prev) => (prev + 1) % texts.length);
+      }, 0);
     } else {
       // Continue typing or deleting
       const speed = isDeleting ? deletingSpeed : typingSpeed;

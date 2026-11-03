@@ -1,0 +1,12 @@
+overrides:
+  # GHSA-g3hv-75wg-m249: eslint が依存する minimatch@10 の DoS 脆弱性
+  minimatch@<11.0.1: ^11.0.1
+
+onlyBuiltDependencies:
+  - sharp
+  - unrs-resolver
+
+peerDependencyRules:
+  allowedVersions:
+    # eslint-config-next 16 は eslint 10 対応済みだが、一部プラグインの peer 範囲が未更新
+    eslint: "10"

@@ -2,36 +2,38 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "homepage": "https://yukikotani231.github.io/",
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "deploy": "npm run build && touch out/.nojekyll && rm -rf docs && mv out docs"
+    "start": "npx serve out",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "framer-motion": "^12.23.24",
-    "gsap": "^3.13.0",
-    "lucide-react": "^0.555.0",
-    "next": "^15.0.0",
+    "gsap": "^3.15.0",
+    "lucide-react": "^1.66.0",
+    "motion": "^14.9.0",
+    "next": "^16.4.4",
     "next-themes": "^0.4.6",
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0",
-    "tailwind-merge": "^3.4.0",
-    "tailwindcss-animate": "^1.0.7"
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.4.20",
-    "eslint": "^8",
-    "eslint-config-next": "^15.0.0",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.17",
-    "typescript": "^5"
+    "@tailwindcss/postcss": "^4.3.4",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19",
+    "eslint": "^10.14.0",
+    "eslint-config-next": "^16.4.4",
+    "tailwindcss": "^4.3.4",
+    "typescript": "^5.9.3"
   }
 }

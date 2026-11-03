@@ -311,7 +311,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-900 dark:text-white border-2 border-slate-200 dark:border-slate-700 rounded-full font-medium hover:bg-white dark:hover:bg-slate-800 hover:scale-105 transition-all duration-300 shadow-md flex items-center gap-2"
+                className="px-8 py-4 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xs text-slate-900 dark:text-white border-2 border-slate-200 dark:border-slate-700 rounded-full font-medium hover:bg-white dark:hover:bg-slate-800 hover:scale-105 transition-all duration-300 shadow-md flex items-center gap-2"
               >
                 <svg
                   className="w-5 h-5"

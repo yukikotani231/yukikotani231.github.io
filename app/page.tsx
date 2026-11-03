@@ -74,7 +74,7 @@ export default function Home() {
                 </a>
                 <a
                   href="#contact"
-                  className="px-8 py-4 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-900 dark:text-white border-2 border-slate-200 dark:border-slate-700 rounded-full font-medium hover:bg-white dark:hover:bg-slate-800 hover:scale-105 transition-all duration-300 shadow-md"
+                  className="px-8 py-4 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xs text-slate-900 dark:text-white border-2 border-slate-200 dark:border-slate-700 rounded-full font-medium hover:bg-white dark:hover:bg-slate-800 hover:scale-105 transition-all duration-300 shadow-md"
                 >
                   Contact
                 </a>
@@ -173,7 +173,7 @@ export default function Home() {
                   ].map((stat, index) => (
                     <FadeIn key={stat.label} delay={0.5 + index * 0.1}>
                       <div className="group relative">
-                        <div className={`absolute -inset-0.5 bg-gradient-to-r ${stat.color} rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500`}></div>
+                        <div className={`absolute -inset-0.5 bg-gradient-to-r ${stat.color} rounded-2xl blur-sm opacity-30 group-hover:opacity-60 transition duration-500`}></div>
                         <div className="relative bg-white dark:bg-slate-800 rounded-2xl p-6 text-center border border-slate-200 dark:border-slate-700 hover:scale-105 transition-transform duration-300">
                           <div className={`inline-flex items-center justify-center w-12 h-12 mb-4 rounded-xl bg-gradient-to-r ${stat.color}`}>
                             <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -193,7 +193,7 @@ export default function Home() {
                 {/* Contribution Graph */}
                 <FadeIn delay={0.8}>
                   <div className="relative group mb-8">
-                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur-sm opacity-20 group-hover:opacity-40 transition duration-500"></div>
                     <a
                       href="https://github.com/yukikotani231"
                       target="_blank"
@@ -228,7 +228,7 @@ export default function Home() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <FadeIn delay={0.9}>
                     <div className="group relative">
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl blur-sm opacity-20 group-hover:opacity-40 transition duration-500"></div>
                       <div className="relative bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700">
                         <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                           <span className="w-8 h-8 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
@@ -268,7 +268,7 @@ export default function Home() {
 
                   <FadeIn delay={1.0}>
                     <div className="group relative">
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl blur-sm opacity-20 group-hover:opacity-40 transition duration-500"></div>
                       <div className="relative bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700">
                         <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                           <span className="w-8 h-8 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 flex items-center justify-center">

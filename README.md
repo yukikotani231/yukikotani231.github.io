@@ -1,62 +1,23 @@
-# Getting Started with Create React App
+# yukikotani231.github.io
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Yuki Kotani のポートフォリオサイト — https://yukikotani231.github.io/
 
-## Available Scripts
+## Stack
 
-In the project directory, you can run:
+- Next.js 16 (App Router, static export) / React 19
+- TypeScript / Tailwind CSS v4 / Motion
+- pnpm / ESLint 10 (flat config)
+- GitHub Actions → GitHub Pages
 
-### `yarn start`
+## Development
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+corepack enable   # package.json の packageManager に従って pnpm を有効化
+pnpm install
+pnpm dev          # http://localhost:3000
+pnpm lint
+pnpm typecheck
+pnpm build        # out/ に静的ファイルを出力
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-## リポジトリ運用ルール
-
-### ブランチ名
-
-ブランチ名は`{issue番号}-{prefix}-{実装内容}`という形式にする。
-
-prefixの例は以下の通り。
-
-|  prefix  |  意味  |
-| ---- | ---- |
-|  feature  |  新機能の実装  |
-|  fix  |  バグ修正  |
-|  refac  |  リファクタリング  |
-|  docs  |  ドキュメントの変更  |
-|  chore  |  その他ツールの変更  |
+`main` への push で GitHub Actions が自動でビルド・デプロイします。
